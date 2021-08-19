@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Training</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+    <string name="log_in">Log in</string>
+    <string name="students">Students</string>
+    <string name="courses">Courses</string>
+    <string name="teachers">Teachers</string>
+    <string name="removestudent">remove student</string>
+    <string name="addstudent">add student</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/createTeacher"
+        android:icon="@drawable/ic_add"
+        android:title="create teacher"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/removeTeacher"
+        android:icon="@drawable/ic_remove"
+        android:title="remove teacher"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/updateTeacher"
+        android:title="update teacher" />
+
+    <item
+        android:id="@+id/placementCourse"
+        android:title="placement course" />
+
+    <item
+        android:id="@+id/viewStudents"
+        android:title="view students" />
+
+    <item
+        android:id="@+id/viewCourses"
+        android:title="view courses" />
+
+
+</menu>
