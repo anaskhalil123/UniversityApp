@@ -88,18 +88,25 @@ class StudentsActivity : AppCompatActivity() {
                     dialogView.findViewById<EditText>(R.id.dialog_student_age).text
 
                 dialogView.findViewById<Button>(R.id.btnAdd).setOnClickListener {
-                    val studentName: String = "" + name
-                    val studentAge: String = "" + age
 
-                    if (studentName.isNotEmpty() && studentAge.isNotEmpty()) {
+
+                    if (name.isNotEmpty() && age.isNotEmpty()) {
+                        val studentName: String = "" + name
+                        val studentAge: Int = Integer.parseInt(age.toString())
+
                         val student = Student(studentName, studentAge)
                         val student1 = Student(studentName, studentAge)
                         student1.takenCourses = student.takenCourses
-                        if (!students.contains(student1))
+                        if (!students.contains(student1)) {
                             students.add(student)
+                        }
                         studentAdapter.notifyDataSetChanged()
+                        alertDialog.dismiss()
+                    } else {
+                        Toast.makeText(this, "fill the fields", Toast.LENGTH_SHORT).show()
+                        alertDialog.dismiss()
                     }
-                    alertDialog.dismiss()
+
                 }
                 dialogView.findViewById<Button>(R.id.btnCancel).setOnClickListener {
                     alertDialog.dismiss()
@@ -139,19 +146,24 @@ class StudentsActivity : AppCompatActivity() {
                         .setText(student!!.name)
 
                     dialogView.findViewById<EditText>(R.id.dialog_student_age)
-                        .setText(student.age)
+                        .setText(student.age.toString())
 
                     dialogView.findViewById<Button>(R.id.btnAdd).setOnClickListener {
                         val updatedName =
                             dialogView.findViewById<EditText>(R.id.dialog_student_name).text
+
                         val updatedAge =
                             dialogView.findViewById<EditText>(R.id.dialog_student_age).text
+
                         if (updatedName.isNotEmpty() && updatedAge.isNotEmpty()) {
                             student.name = "$updatedName"
-                            student.age = "$updatedAge"
+                            student.age = Integer.parseInt(updatedAge.toString())
                             studentAdapter.notifyDataSetChanged()
+                            alertDialog.dismiss()
+                        } else {
+                            Toast.makeText(this, "fill fields", Toast.LENGTH_SHORT).show()
+                            alertDialog.dismiss()
                         }
-                        alertDialog.dismiss()
                     }
 
                     dialogView.findViewById<Button>(R.id.btnCancel).setOnClickListener {

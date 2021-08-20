@@ -5,7 +5,7 @@ import com.a.khalil.training.StudentsActivity
 
 data class Student(
     var name: String = "",
-    var age: String = "20"
+    var age: Int = 20
 ) {
 
     val isChecked: Boolean = false
